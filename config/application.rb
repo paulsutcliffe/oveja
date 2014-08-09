@@ -8,18 +8,6 @@ Bundler.require(*Rails.groups)
 
 module Oveja
   class Application < Rails::Application
-
-    config.generators do |g|
-      g.test_framework :rspec,
-        fixtures: true,
-        view_specs: false,
-        helper_specs: false,
-        routing_specs: false,
-        controller_specs: false,
-        request_specs: false
-      g.fixture_replacement :factory_girl, dir: "spec/factories"
-    end
-
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -30,6 +18,6 @@ module Oveja
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    config.i18n.default_locale = :es
+    # config.i18n.default_locale = :de
   end
 end
