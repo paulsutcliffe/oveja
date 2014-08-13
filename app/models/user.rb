@@ -1,5 +1,15 @@
-class User < ActiveRecord::Base
-  enum role: [:user, :vip, :admin]
+class User
+  include Mongoid::Document
+  include Mongoid::Timestamps::Created
+  field :provider, type: String
+  field :uid, type: String
+  field :name, type: String
+  field :email, type: String
+  validates_presence_of :name
+  # run 'rake db:mongoid:create_indexes' to create indexes
+  index({ email: 1 }, { unique: true, background: true })
+
+  # enum role: [:user, :vip, :admin]
   after_initialize :set_default_role, :if => :new_record?
 
   def set_default_role

@@ -13,6 +13,7 @@ gem 'bootstrap-sass'
 gem 'figaro', '>= 1.0.0.rc1'
 gem 'haml-rails'
 gem 'high_voltage'
+gem 'mongoid', '~> 4.0.0'
 gem 'mysql2'
 gem 'omniauth'
 gem 'omniauth-facebook'
@@ -35,6 +36,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'rspec-rails'
+  gem 'mongoid-rspec'
   gem 'thin'
 end
 group :production do
