@@ -15,6 +15,8 @@ gem 'devise-i18n'
 gem 'figaro', '>= 1.0.0.rc1'
 gem 'haml-rails'
 gem 'mysql2'
+gem 'mongoid'
+gem 'bson_ext'
 gem 'pundit'
 gem 'simple_form'
 group :development do
@@ -40,6 +42,8 @@ group :production do
   gem 'unicorn'
 end
 group :test do
+  gem 'cucumber-rails'
+  gem "mongoid-rspec"
   gem 'capybara'
   gem 'database_cleaner'
   gem 'faker'
