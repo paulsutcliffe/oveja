@@ -8,8 +8,23 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %header
-      = render 'layouts/navigation'
+    #container
+      .hidden-header
+      %header.clearfix
+        .top-bar
+          .container
+            .row
+              .col-md-6
+                %ul.contact-details
+                  %li
+                    = link_to '#' do
+                      %i.icon-mobile-2
+                        +51 951.754.033 | +51 987.780.366
+                  %li
+                    = link_to '#' do
+                      %i.icon-mail-2
+                        hola@oveja.pe
+
     %main{:role => "main"}
       = render 'layouts/messages'
       = yield
