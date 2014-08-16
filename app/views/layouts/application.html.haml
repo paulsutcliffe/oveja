@@ -1,5 +1,5 @@
 !!!
-%html
+%html{:lang => 'es'}
   %head
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     %title= content_for?(:title) ? yield(:title) : 'Oveja'
@@ -23,8 +23,122 @@
                   %li
                     = link_to '#' do
                       %i.icon-mail-2
-                        hola@oveja.pe
+                        info@oveja.pe
+              .col-md-6
+                %ul.social-list
+                  %li
+                    %a.facebook.sh-tooltip{:'data-placement' => 'bottom', :title => 'Facebook', :href => '#'}
+                      %i.icon-facebook-2
+                  %li
+                    %a.twitter.sh-tooltip{:'data-placement' => 'bottom', :title => 'Twitter', :href => '#'}
+                      %i.icon-twitter-2
+                  %li
+                    %a.instgram.sh-tooltip{:'data-placement' => 'bottom', :title => 'Instagram', :href => '#'}
+                      %i.icon-instagram
+        .navbar.navbar-default.navbar-top
+          .container
+            .navbar-header
+              %button.navbar-toggle{:type => 'button', :'data-toggle' => 'collapse', :'data-target' => '.navbar-collapse'}
+                %i.icon-menu-1
+              = link_to image_tag(image_path('logo-oveja-gris.png')), root_path, class: 'navbar-brand'
+            .navbar-collapse.collapse
+              .search-side
+                = link_to '#', class: 'show-search' do
+                  %i.icon-search-1
+                .search-form
+                  %form{:autocomplete => 'off', :role => 'search', :method => 'get', :class => 'searchform', :action => '#'}
+                    %input{:type => 'text', :value => '', :name => 's', :id => 's', :placeholder => 'Search the site...'}
+              %ul.nav.navbar-nav.navbar-right
+                %li= link_to 'Inicio', root_path, class: 'active'
+                %li= link_to 'Catálogo', '#'
+                %li= link_to 'Nuestros Cojines', '#'
+                %li= link_to 'Blog', '#'
+                %li= link_to 'Contacto', '#'
 
-    %main{:role => "main"}
-      = render 'layouts/messages'
       = yield
+      %footer
+        .container
+          .row.footer-widgets
+            .col-md-3
+              .footer-widget.contact-widget
+                %h4
+                  Información de Contacto
+                  %span.head-line
+                %ul
+                  %li
+                    %span Dirección:
+                    Tantamayo 318, Miraflores, Lima.
+                  %li
+                    %span Teléfonos:
+                    +51 951.754.033 | +51 987.780.366
+                  %li
+                    %span E-mail:
+                    info@oveja.pe
+                  %li
+                    %span Web:
+                    www.oveja.pe
+            .col-md-3
+              .footer-widget.flickr-widget
+                %h4
+                  Fotos de Nuestros clientes
+                  %span.head-line
+                %ul.flickr-list
+                  - 9.times do
+                    %li
+                      %a{:href => '#'}
+                        %img{:src => 'http://placehold.it/72x65/ddd/aaa'}
+            .col-md-3
+              .footer-widget.twitter.widget
+                %h4
+                  Oveja en el Twitter
+                  %span.head-line
+                %ul
+                  %li
+                    %p
+                      =link_to '@paulyoyo', '#'
+                      En esta página vamos a vender unos cojines bien berracos, así que si tienes ojos virgenes, uuuuta mejor no los veas.
+                    %span 15 de Agosto 2014
+            .col-md-3
+              .footer-widget.mail-subscribe-widget
+                %h4
+                  Mantente informado de nuestras novedades
+                  %span.head-line
+                %form.subscribe
+                  %input{:type => 'text', :placeholder => 'el_cacash@gmail.com'}
+                  %input.main-button{:type => 'submit', :value => 'send'}
+
+              .footer-widget.social-widget
+                %h4
+                  Síguenos
+                  %span.head-line
+                %ul.social-icons
+                  %li
+                    = link_to '#', class: 'facebook' do
+                      %i.icon-facebook-2
+                  %li
+                    = link_to '#', class: 'twitter' do
+                      %i.icon-twitter-2
+                  %li
+                    = link_to '#', class: 'instgram' do
+                      %i.icon-instagramm
+
+          .copyright-section
+            .row
+              .col-md-6
+                %p © 2014 Oveja - Todos los derechos reservados
+              .col-md-6
+                %ul.footer-nav
+                  %li= link_to 'Mapa de Sitio', '#'
+                  %li= link_to 'Politicas del sitio', '#'
+                  %li= link_to 'Contacto', '#'
+
+    %a.back-to-top{:href => '#'}
+      %i.icon-up.open-1
+
+    #loader
+      .spinner
+        .dot1
+        .dot2
+
+
+
