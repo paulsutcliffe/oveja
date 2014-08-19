@@ -4,4 +4,145 @@
       %ul
         %li{:'data-transition' => 'fade', :'data-slotamount' => 7, :'data-masterspeed' => '300'}
           %img{:src => '/assets/slide-oveja-cojin.jpg', :'data-fullwidthcentering' => 'on', :alt => 'slidebg1',  :'data-bgfit' => 'cover', :'data-bgposition' => 'center center', :'data-bgrepeat' => 'no-repeat'}
+          .tp-caption.uppercase.big_font_size.boldest_font_weight.dark_font_color.gray_bg.sft.start{:'data-x' => '540', :'data-y' => '100', :'data-speed' => '300', :'data-start' => '1600', :'data-easing' => 'easeOutExpo'}
+            %span.accent-color
+              Los cojines
+            %br que estabas buscando
+          .tp-caption.medium_font_size.regular_font_weight.dark_font_color.gray_bg.sft.start{:'data-x' => '540', :'data-y' => '185', :'data-speed' => '300', :'data-start' => '1900', :'data-easing' => 'easeOutExpo'}
+            ¿qué esperas para comprartelos todos?
+          .tp-caption.sfb.start{:'data-x' => '700', :'data-y' => '254', :'data-speed' => '300', :'data-start' => '2500', :'data-easing' => 'easeOutExpo'}
+            = link_to 'Ver Catálogo', '#', class: 'tp-caption btn-system btn-large btn-gray'
+          .tp-caption.sfl.start{:'data-x' => '80', :'data-y' => 'bottom', :'data-speed' => '1000', :'data-start' => '1000', :'data-easing' => 'Power1.easeOut'}
+            = image_tag(image_path('slide-chica-cojin.png'))
+        %li{:'data-transition' => 'fade', :'data-slotamount' => 7, :'data-masterspeed' => '300'}
+          %img{:src => '/assets/slide-oveja-cojin-2.jpg', :'data-fullwidthcentering' => 'on', :alt => 'slidebg2',  :'data-bgfit' => 'cover', :'data-bgposition' => 'center center', :'data-bgrepeat' => 'no-repeat'}
+          .tp-caption.uppercase.big_font_size.bold_font_weight.dark_font_color.gray_bg.sfl.start{:'data-x' => 'left', :'data-y' => '110', :'data-speed' => '300', :'data-start' => '1600', :'data-easing' => 'easeInOutExpo'}
+            %span.accent-color
+              Cojines para fanáticos
+            %br de todo lo que se te ocurra
+          .tp-caption.uppercase.big_font_size.bold_font_weight.dark_font_color.gray_bg.sft.start{:'data-x' => 'left', :'data-y' => '200', :'data-speed' => '300', :'data-start' => '1900', :'data-easing' => 'easeInOutExpo'}
+            ¡Son el regalo perfecto!
+          .tp-caption.sfb.start{:'data-x' => 'left', :'data-y' => '254', :'data-speed' => '300', :'data-start' => '2500', :'data-easing' => 'easeOutExpo'}
+            = link_to 'Ver Categorias', '#', class: 'tp-caption btn-system btn-large btn-gray'
 
+  :javascript
+    var revapi;
+    jQuery(document).ready(function() {
+      vapi = jQuery('.fullwidthbanner').revolution({
+
+      delay:9000,
+      startwidth:1140,
+      startheight:450,
+      hideThumbs:200,
+
+      thumbWidth:100,
+      thumbHeight:50,
+      thumbAmount:3,
+
+      navigationType:"none",
+      navigationArrows:"solo",
+      navigationStyle:"round",
+
+      touchenabled:"on",
+      onHoverStop:"on",
+
+      navigationHAlign:"center",
+      navigationVAlign:"bottom",
+      navigationHOffset:0,
+      navigationVOffset:20,
+
+      soloArrowLeftHalign:"left",
+      soloArrowLeftValign:"center",
+      soloArrowLeftHOffset:20,
+      soloArrowLeftVOffset:0,
+
+      soloArrowRightHalign:"right",
+      soloArrowRightValign:"center",
+      soloArrowRightHOffset:20,
+      soloArrowRightVOffset:0,
+
+      shadow:0,
+      fullWidth:"on",
+      fullScreen:"off",
+      lazyLoad:"on",
+
+      stopLoop:"off",
+      stopAfterLoops:-1,
+      stopAtSlide:-1,
+
+      shuffle:"off",
+
+      hideSliderAtLimit:0,
+      hideCaptionAtLimit:0,
+      hideAllCaptionAtLilmit:0,
+      startWithSlide:0,
+      });
+    });
+
+
+#content.full-sections
+  .section{:style => 'padding-top:60px; padding-bottom:60px; border-top:0; border-bottom:0; background:#fff;'}
+    .big-title.text-center{:'data-animation' => 'fadeInDown', :'data-animation-delay' => '01'}
+      %p.title-desc Catálogo
+      %h1
+        Nuestros
+        %strong últimos cojines
+
+      %p.text-center Decora tus ambientes con lo que más te gusta, tenemos los cojines perfectos para ti.
+
+      .hr1{:style => 'margin-bottom:25px;'}
+
+    .full-width-recent-projects
+      .projects-carousel.touch-carousel.navigation-3
+
+        - 3.times do
+          .portfolio-item.item
+            .portfolio-border
+              .portfolio-thumb
+                %a.lightbox{:title => 'Fogata', :href => 'http://placehold.it/1024x620/eee'}
+                  .thumb-overlay
+                    %i.icon-resize-full
+                  = image_tag(image_path('cojin-fogata.jpg'))
+
+              .portfolio-details
+                %a{:href => '#'}
+                  %h4 Cojin
+                  %span Fogata
+                %a.like-link{:href => '#'}
+                  %i.icon-heart-1
+                    %span 4
+          .portfolio-item.item
+            .portfolio-border
+              .portfolio-thumb
+                %a.lightbox{:title => 'Cámara', :href => 'http://placehold.it/1024x620/eee'}
+                  .thumb-overlay
+                    %i.icon-resize-full
+                  = image_tag(image_path('cojin-camara.jpg'))
+
+              .portfolio-details
+                %a{:href => '#'}
+                  %h4 Cojin
+                  %span Cámara
+                %a.like-link{:href => '#'}
+                  %i.icon-heart-1
+                    %span 29
+          .portfolio-item.item
+            .portfolio-border
+              .portfolio-thumb
+                %a.lightbox{:title => 'Rythim Composer', :href => 'http://placehold.it/1024x620/eee'}
+                  .thumb-overlay
+                    %i.icon-resize-full
+                  = image_tag(image_path('cojin-groovebox.jpg'))
+
+              .portfolio-details
+                %a{:href => '#'}
+                  %h4 Cojin
+                  %span Groove Box
+                %a.like-link{:href => '#'}
+                  %i.icon-heart-1
+                    %span 9
+    .hr1{:style => 'margin-bottom:35px;'}
+    .text-center
+      %a.btn-system.btn-large.boder-btn{:href => '#'}
+        %i.icon-brush
+        Ver todos los cojines
